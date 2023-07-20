@@ -3,7 +3,7 @@
 module.exports = package2;
 
 function package2() {
-  console.log("package 2");
+  console.log("package 2 v2");
   return 'Hello from package2';
   
 }

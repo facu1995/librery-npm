@@ -1,29 +1,6 @@
-0 silly argv {
-0 silly argv   _: [ 'publish' ],
-0 silly argv   canary: true,
-0 silly argv   c: true,
-0 silly argv   composed: 'publish',
-0 silly argv   lernaVersion: '7.1.4',
-0 silly argv   '$0': 'node_modules/.bin/lerna'
-0 silly argv }
-1 notice cli v7.1.4
-2 verbose packageConfigs Resolving packages based on package.json "workspaces" configuration.
-3 verbose rootPath /home/fperez/Escritorio/repository/liberia-npm
-4 info canary enabled
-5 verbose session 3b1693b93deef53f
-6 verbose user-agent lerna/7.1.4/node@v16.14.1+x64 (linux)
-7 silly EWORKINGTREE Command failed with exit code 128: git describe --always --long --dirty --first-parent
-7 silly EWORKINGTREE fatal: bad revision 'HEAD'
-8 notice FYI Unable to verify working tree, proceed at your own risk
-9 silly hasTags
-10 verbose hasTags false
-11 info Assuming all packages changed
-12 verbose updated package-1
-13 verbose updated package-2
-14 error Error: Command failed with exit code 128: git describe --always --long --dirty --first-parent --match v*.*.*
-14 error fatal: bad revision 'HEAD'
-14 error     at makeError (/home/fperez/Escritorio/repository/liberia-npm/node_modules/execa/lib/error.js:59:11)
-14 error     at handlePromise (/home/fperez/Escritorio/repository/liberia-npm/node_modules/execa/index.js:114:26)
-14 error     at processTicksAndRejections (node:internal/process/task_queues:96:5)
-14 error     at async PublishCommand.detectCanaryVersions (/home/fperez/Escritorio/repository/liberia-npm/node_modules/lerna/dist/index.js:9493:29)
-14 error     at async PublishCommand.initialize (/home/fperez/Escritorio/repository/liberia-npm/node_modules/lerna/dist/index.js:9239:20)
+50 error Error: Command failed with exit code 128: git push --follow-tags --no-verify --atomic origin main
+50 error remote: Support for password authentication was removed on August 13, 2021.
+50 error remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
+50 error fatal: Autenticación falló para 'https://github.com/facu1995/librery-npm.git/'
+50 error     at makeError (/home/fperez/Escritorio/repository/liberia-npm/node_modules/execa/lib/error.js:59:11)
+50 error     at handlePromise (/home/fperez/Escritorio/repository/liberia-npm/node_modules/execa/index.js:114:26)
