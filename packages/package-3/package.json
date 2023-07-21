@@ -1,0 +1,26 @@
+{
+  "name": "package-3",
+  "version": "0.0.1",
+  "description": "> TODO: description",
+  "author": "fperez <fperez>",
+  "homepage": "https://github.com/facu1995/librery-npm#readme",
+  "license": "ISC",
+  "main": "lib/package-3.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facu1995/librery-npm.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/package-3.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/facu1995/librery-npm/issues"
+  }
+}
