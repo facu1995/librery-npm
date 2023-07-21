@@ -20,7 +20,7 @@
     "test": "node ./__tests__/package-1.test.js"
   },
   "dependencies": {
-    "package-1": "file:../package-2"
+    "package-2": "file:../package-2"
   },
   "gitHead": "61f625de0af04c3efe8d245bfb1d720c46a8e275"
 }
