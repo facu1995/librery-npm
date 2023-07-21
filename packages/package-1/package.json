@@ -19,5 +19,5 @@
   "dependencies": {
     "package-1": "file:../package-2"
   },
-  "gitHead": "7942a2efa6cbb29e8ec5b729c069b4dbd4f9410e"
+  "gitHead": "01cd8428bc5a757182565871a8030b117d11e47c"
 }

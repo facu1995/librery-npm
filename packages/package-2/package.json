@@ -16,5 +16,5 @@
   "scripts": {
     "test": "node ./__tests__/package-2.test.js"
   },
-  "gitHead": "feb95c7f7f16103e377b59d3ffa96967db28aa06"
+  "gitHead": "01cd8428bc5a757182565871a8030b117d11e47c"
 }
