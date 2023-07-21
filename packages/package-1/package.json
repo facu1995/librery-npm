@@ -10,6 +10,9 @@
     "lib": "lib",
     "test": "__tests__"
   },
+  "publishConfig" : {
+    "registry" : "http://localhost:4873" 
+  },
   "files": [
     "lib"
   ],
@@ -19,5 +22,5 @@
   "dependencies": {
     "package-1": "file:../package-2"
   },
-  "gitHead": "c2ac073f728d62e7d1e96c0e246434d77f0aef19"
+  "gitHead": "61f625de0af04c3efe8d245bfb1d720c46a8e275"
 }
