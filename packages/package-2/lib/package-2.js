@@ -3,7 +3,7 @@
 module.exports = package2;
 
 function package2() {
-  console.log("package 2 v2");
+  console.log("package 2 vss2");
   return 'Hello from package2';
   
 }
