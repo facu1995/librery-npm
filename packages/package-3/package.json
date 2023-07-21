@@ -10,8 +10,8 @@
     "lib": "lib",
     "test": "__tests__"
   },
-  "publishConfig" : {
-    "registry" : "http://localhost:4873" 
+  "publishConfig": {
+    "registry": "http://localhost:4873"
   },
   "files": [
     "lib"
