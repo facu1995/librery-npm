@@ -1,6 +1,6 @@
 {
   "name": "@infosis/label2",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "src/MyLabel.tsx",
   "author": "fperez <fperez>",
   "license": "ISC",
