@@ -2,6 +2,8 @@
   "name": "@infosis/label",
   "version": "1.0.0",
   "main": "src/MyLabel.tsx",
+  "author": "fperez <fperez>",
+  "license": "ISC",
   "files": [
     "src"
   ],
@@ -12,5 +14,8 @@
   "devDependencies": {
     "jest": "^27.0.0",
     "typescript": "^4.0.0"
+  },
+  "publishConfig": {
+    "registry": "http://localhost:4873"
   }
 }
