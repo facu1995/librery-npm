@@ -9,7 +9,7 @@ export interface Props {
   /**
    * Esto setea el tamaño
    */
-  size: 'normal' | 'h1' | 'h2' | 'h3' | 'h4';
+  size: 'normal' | 'h1' | 'h2' | 'h3' ;
 
   /**
    * Si quiere todo capitalizado
