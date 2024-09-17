@@ -1,6 +1,6 @@
 {
   "name": "@infosis/toast",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "main": "Toast.tsx",
   "author": "fperez <fperez>",
   "license": "ISC",
