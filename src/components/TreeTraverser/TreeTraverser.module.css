@@ -1,0 +1,272 @@
+.TreeTraverser{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border: 4px solid rgba(220, 221, 227, 1);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+
+.TreeTraverser > .firstLevelCard, .TreeTraverser > .subLevelCard {
+    display: flex;
+    border-bottom: 1px solid rgba(220, 221, 227, 1);
+    text-align: left;
+    gap: 1rem;
+    align-items: center;
+    padding: 7px 25px;
+    cursor: pointer;
+}
+
+.TreeTraverser > .firstLevelCard > figure,
+.TreeTraverser > .subLevelCard > figure {
+    border: 1px solid #546DFE;
+    background-color: rgba(220, 221, 227, 1);
+    width: 57px;
+    height: 57px;
+    border-radius: 50%;
+    padding: 1rem;
+    aspect-ratio: 1/1;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.TreeTraverser > .firstLevelCard > figure > img,
+.TreeTraverser > .subLevelCard > figure > img {
+    height: auto;
+    max-width: 100%;
+}
+.firstLevelCard > section, .subLevelCard section{
+    display: flex;
+    flex-direction: column;
+}
+.firstLevelCard h3, .subLevelCard h3{
+    font-size: 15px;
+    font-weight: 500;
+}
+.firstLevelCard span, .subLevelCard span{
+    font-size: 10px;
+    font-weight: 400;
+    margin-top: 0.2rem;
+}
+
+.emptyState {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.emptyState p{
+    width: 80%;
+    text-align: center;
+    margin: 20px auto;
+    color: var(--ba-text-6);
+}
+
+.emptyState.no-cat {
+    margin-top: 50%;
+}
+
+.emptyState.no-sub-cat {
+    margin: 25% auto;
+}
+
+.emptyState p span{
+    color: var(--ba-primary-color);
+    margin-left: 1ch; 
+}
+
+.traversedTrack{
+    margin: 0;
+    padding: 1rem;
+    overflow: hidden; 
+    overflow-x: auto;
+    border-bottom: 1px solid rgba(220, 221, 227, 1);
+    min-height: 60px;
+}
+
+.traversedTrack::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    -webkit-appearance: none;
+}
+
+.traversedTrack::-webkit-scrollbar-thumb {
+    background-color: #7979799e;
+    border-radius: 24px;
+    border: 0px solid #f1f2f3;
+}
+
+.traversedTrack, .traversedTrack section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.traversedTrack div {
+    border: 1px solid var(--ba-primary-color);
+    border-radius: 20px;
+    width: fit-content;
+    padding: 0px 8px;
+    color: var(--ba-primary-color);
+    font-weight: 500;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    font-size: 14px;
+    height: 30px;
+}
+
+.traversedTrack div>label{
+    display: flex;
+    align-items: center;
+}
+
+.traversedTrack .pointer {
+    width: 8px;
+    height: 8px;
+}
+
+.traversedTrack .pointerGastronomy {
+    width: 8px;
+    height: 8px;
+}
+
+.traversedTrack>div .categoryIcon{
+    height: 14px;
+    width: 14px;
+    margin: .3rem;
+}
+
+.traversedTrack>div .categoryGastronomyIcon{
+    height: 14px;
+    width: 14px;
+    margin: .3rem;
+}
+
+.traversedTrack 
+.traversedTrack div div:first-of-type>img{
+    width: 8px;
+}
+.traversedTrack div:last-of-type{
+    background-color: var(--ba-primary-light);
+}
+.traversedTrack section  label{
+    display: inline;
+    max-width: 15ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.traversedTrack div img{
+    width: 13px;
+    height: auto;
+    margin-right: .5rem;
+}
+
+.traversedTrack div label+img{
+    transform: rotate(180deg);
+    width: 8px;
+    margin: 0;
+    margin-left: .3rem;
+}
+
+.traversedTrack div button{
+    display: grid;
+    place-content: center;
+    margin-left: 10px;
+}
+
+.traversedTrack section>:last-child{
+    background-color: var(--ba-primary-light);
+}
+
+.insideInputTrack{
+    margin: 0;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
+.insideInputTrack section{
+    height: 100%0;
+}
+
+.insideInputTrack div{
+    border-color: var(--ba-border);
+    backgredround-color: white;
+    color: var(--ba-border);
+    margin: 0;
+    height: 23px;
+    height: 100%;
+}
+
+.insideInputTrack div.manyValues{
+    max-width: 40ch;
+}
+
+.insideInputTrack div.noLimit{
+    border: 1px solid #5F6388;
+    max-width: none;
+}
+
+ /* set as important to override the filter from .gastronomy */
+.insideInputTrack div img{
+    filter:brightness(0) saturate(100%) invert(84%) sepia(2%) saturate(4563%) hue-rotate(194deg) brightness(82%) contrast(86%) !important; 
+    height: 20px;
+    width: 20px;
+}
+
+.insideInputTrack div:last-of-type{
+    border-color: #5F6388;
+    background-color: #F5F7FF;
+    color: #5F6388;
+}
+
+.baseLevelPad {
+    background-color: rgba(220, 221, 227, 1); 
+    cursor: pointer; 
+} 
+
+.baseLevelPad > * {
+    cursor: pointer;
+}
+
+@media(min-width: 925px){
+    .TreeTraverser, .emptyState{
+        min-width: 600px;
+        max-width: 33vw;
+    }
+    .traversedTrack{
+        padding: 1rem;
+        overflow: hidden;
+        flex-wrap: wrap;
+        max-width: 600px;
+    }
+    .emptyState{
+        max-width: 600px;
+    }
+    .emptyState.no-sub-cat {
+        margin: auto;
+    }
+    .emptyState.no-cat {
+        margin-top: 20%;
+    }
+    .insideInputTrack {
+        left: 3rem;
+        padding: 1rem;
+        top: -.3rem;
+        flex-wrap: nowrap;
+    }
+    .insideInputTrack div, .insideInputTrack  section label, .insideInputTrack div.manyValues {
+        max-width: 40ch;
+    }
+    .insideInputTrack:focus-within img{
+        filter: none;
+    }
+}

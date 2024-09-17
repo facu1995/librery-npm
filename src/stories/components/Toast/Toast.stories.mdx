@@ -1,0 +1,352 @@
+import { Meta } from '@storybook/addon-docs';
+import {Toast} from '../../../components'
+
+<Meta title="Infosis/BuildingBlocks/Toast/Overview" />
+
+<style>
+  {`
+    h1 {
+      color: #383C54 !important;
+      max-width: 32ch !important;
+    }
+    h2, h3, h4 {
+      max-width: 59ch !important;
+      color: #383C54 !important;
+    }
+    ul{
+      max-width: 70ch!important
+    }
+    li {
+      font-size: 1rem !important;
+      margin: .5rem 0 !important;
+      color: #494E6E !important;
+    } 
+    li>span{
+      font-weight: bolder;
+    }
+    p {
+      margin: .5rem 0 !important;
+      font-size: 1rem !important;
+      color: #494E6E !important;
+    } 
+    div:not(.language-plaintext)>span{
+      font-weight: bolder;
+      color: #494E6E !important;
+    }
+    .language-plaintext>span{
+      font-weight: lighter !important;
+      color: #494E6E !important;
+    }
+    .language-plaintext{
+        color: #494E6E !important;
+    }
+    p>span{
+        font-weight: bold;
+    }
+    span{
+        color: #494E6E !important;
+        font-weight: bold;
+    }
+    img {
+      max-width: 650px !important;
+      height: auto;
+      margin: auto !important;
+    }
+    .small-img{
+      min-width: 900px !important;
+      object-fit: cover;
+    }
+  `}
+</style>
+
+# < Toast /> ⚙️
+
+El componente <span>Toast</span> muestra a los usuarios de manera informativa, un mensaje de alerta 
+(`success`, `error` o `test`) que busca informar lo que está sucediendo sin interrupir la navegación. 
+
+```
+<Toast text='Mensaje informativo del toast' />
+
+```
+*<Toast text='Mensaje informativo del toast'  />* 
+
+<br />
+
+## Propiedades
+
+El componente <span>Toast</span> puede recibir las siguientes propiedades:
+<ul>
+    <li>type: especificación del tipo de icono. Admite unicamente los valores `success`, `error` o `test`</li>
+    <li><span>text :</span> descripción del mensaje informativo a los usuarios</li>
+    <li>buttonText: texto informativo o título del boton que acompaña al mensaje</li>
+    <li>onButtonClick: funcionalidad que se ejecuta al clickear el boton </li>
+    <li>styles: estilos adicionales del toast</li>
+    <li>portalRef: referencia al nodo donde se ejecuta `createPortal()`</li>
+    <li>iconStyles: estilos aplicados al icono seleccionado</li>
+    <li>color: color de fondo personalizado</li>
+</ul>
+Observar que las *props* destacadas en negrita son obligatorias para el correcto funcionamiento del componente.
+<p>Puedes revisar en profundidad cada una de las *props* y personalizar este componente en la sección <a href='https://storybook.infosis.tech/?path=/story/infosis-buildingblocks-toast-toast--docs'>Docs</a>.</p>
+
+## Propiedad portalRef
+
+La *prop* `portalRef` es opcional del componente y se pasa como valor el nodo padre donde se va a renderizar el componente **Toast** por medio de la función `createPortal()`.
+
+A continuación, se muestra un ejemplo de la aplicación de la *prop* `portalRef` para que puedas aplicarlo en tu proyecto.
+
+<ul> 
+    <li>
+      <p> `Toast.tsx`</p>
+      ```
+        // Create the corresponding component structure
+
+        import { CSSProperties } from "react"
+        import style from "./Toast.module.css"
+        import checkIcon from "./assets/check.svg"
+        import errorIcon from "./assets/error.svg"
+        import { createPortal } from "react-dom"
+
+        export interface ToastProps {
+            type?: 'success' | 'error' | 'test'
+            text: string
+            buttonText?: string
+            onButtonClick?: () => void
+            styles?: CSSProperties
+            portalRef?: HTMLElement | null
+            iconStyles?: CSSProperties
+            color: string
+        }
+
+        const icon = (type: string) => {
+          if (type === 'success') return checkIcon;
+          if (type === 'error') return errorIcon;
+          if (type === 'test') return confirmIcon;
+        };
+
+        const Toast = ({
+          type = 'success',
+          text = '',
+          buttonText = '',
+          onButtonClick,
+          styles = {},
+          portalRef = null,
+          iconStyles = {},
+          color,
+        }: ToastProps) => {
+            const toast = (
+              <div
+                className={`${style.container} ${style.type} `}
+                style={{ ...styles, background: color }}
+              >
+                <div className={style.icon}>
+                  <img draggable={false} src={icon(type)} alt={`${type}-icon`} style={iconStyles} />
+                </div>
+                <span className={style.text}>{text}</span>
+                <button className={style.button} onClick={onButtonClick} type="button">
+                    {buttonText}
+                </button>
+                </div>
+            );
+
+            if (portalRef) {
+                return createPortal(toast, portalRef);
+            } else {
+                return toast;
+            }
+        }
+
+        export default Toast;
+      ```
+    </li>
+    <li>
+      <p>`App.tsx`</p> 
+      ```
+        import './App.css'
+        import Toast from './client/components/Toast/Toast'
+        import useToast from './client/hooks/useToast'
+        import errorIcon from "./client/components/Toast/assets/error.svg"
+        import checkIcon from "./client/components/Toast/assets/check.svg" 
+        import { CSSProperties, useRef } from 'react'
+
+        const TOAST_STYLES: CSSProperties = {
+          borderRadius: "10",
+        }
+
+
+        function App() {
+          const containerRef = useRef<HTMLDivElement>(null);
+          const { toast, showToast } = useToast();
+
+          const handleClick = () => {
+            showToast({
+              icon: errorIcon, 
+              text: 'Mensaje informativo del toast',
+              buttonText: 'Ok',
+              styles: TOAST_STYLES,
+              portalRef: containerRef.current, 
+            })
+          }
+
+          return (
+            <div className='app-container'>
+              <div className='app-ref' ref={containerRef}>
+                <p>`Coloca la prop ${ref={containerRef}} en mi contenedor padre si deseas que el Toast se renderice aqui.`</p>
+              </div>
+              <div className='app-pos'>
+                <p>`Coloca la prop ${ref={containerRef}} en mi contenedor padre si deseas que el Toast se renderice aqui.`</p>
+              </div>
+              <div className='app-header'>
+                <h1>Panel Toast</h1>
+                <button onClick={handleClick}>Clickeame para mostrar el toast</button>
+              </div>
+              <div className='app-toast'>
+                <p>Coloca portalRef = null u omite la prop para que se renderice en su posición por defecto</p>
+                { toast && <Toast {...toast} /> }
+              </div>
+            </div>
+          )
+        }
+        
+        export default App
+      ```
+    </li>
+    <li>
+      <p>`App.css`</p> 
+      ```
+          #root {
+          max-width: 1280px;
+          margin: 0 auto;
+          padding: 2rem;
+          text-align: center;
+        }
+
+        .app-container{
+          border: 1px solid red;
+          width: 600px;
+          margin: 1px;
+        }
+
+        .app-ref{
+          border: 1px solid blue;
+          width: 90%;
+          margin: 1rem;
+          padding:10px;
+        }
+
+        .app-pos{
+          border: 1px solid brown;
+          width: 90%;
+          margin: 1rem;
+          padding:10px;
+        }
+
+        .app-header{
+          border: 1px solid green;
+          width: 90%;
+          margin: 1rem;
+          padding: 10px;
+        }
+
+        .app-toast{
+          border: 1px solid purple;
+          width: 90%;
+          margin: 1rem;
+          padding: 10px;
+        }
+      ```
+    </li>
+    <li>
+      <p>`useToast.tsx`</p>
+      ```
+          import { useState, useCallback, useEffect } from 'react';
+          import { ToastProps } from '../components/Toast/Toast';
+
+          const useToast = () => {
+            const [toast, setToast] = useState<ToastProps | null>(null);
+
+            const showToast = useCallback(async (data: ToastProps) => {
+              setToast(data);
+              const timer = setTimeout(() => setToast(null), 10000);
+              return () => clearTimeout(timer);
+            }, []);
+
+            const hideToast = useCallback(() => {
+              setToast(null);
+            }, []);
+
+            const handleClick = (e: MouseEvent) => {
+              const { target } = e;
+              if (target instanceof Element && target.nodeName === 'BUTTON') {
+                return;
+              } else {
+                hideToast();
+              }
+            };
+
+            useEffect(() => {
+              if (
+                (window.location.search.includes('new-comment') ||
+                  window.location.search.includes('edit-comment')) &&
+                !window.location.search.includes('error=repeated')
+              ) {
+                hideToast();
+              }
+              document.addEventListener('click', handleClick, true);
+
+              return () => {
+                document.removeEventListener('click', handleClick, true);
+              };
+            }, [hideToast]);
+
+            return {
+              toast,
+              showToast,
+              hideToast,
+            };
+          };
+
+        export default useToast;
+      ```
+    </li>
+</ul>
+
+De esta manera, colocando la *prop* `ref={containerRef}`, se renderiza el **Toast** en el contenedor seleccionado. 
+Para más información, se deja a disposición la documentación de `createPortal()` en el siguiente [Link](https://es.react.dev/reference/react-dom/createPortal).
+
+## Tipos de Toast
+
+Un toast puede adoptar la configuración y los estilos relacionados cuando el mensaje informativo es de tipo **exitoso**. 
+Podemos accionar este comportamiento con la *prop* `type` asignandole el valor `success`. 
+
+```
+<Toast type='success' text='Subcategoria creada con exito' />
+
+```
+*<Toast type='success' text='Subcategoria creada con exito' />* 
+
+<br />
+
+También, un toast puede adoptar la configuración y los estilos relacionados cuando el mensaje informativo es de tipo **error**. 
+Podemos accionar este comportamiento con la *prop* `type` asignandole el valor `error`. 
+
+```
+<Toast type='error' text='El producto no se pudo eliminar' />
+
+```
+*<Toast type='error' text='El producto no se pudo eliminar' />*
+
+<br />
+
+Finalmente, un toast puede adoptar la configuración y los estilos customizables por el usuario cuando el mensaje informativo es de tipo **test**. 
+Podemos accionar este comportamiento con la *prop* `type` asignandole el valor `test`. 
+
+```
+<Toast type='test' text='Mensaje informativo del toast' />
+
+```
+*<Toast type='test' text='Mensaje informativo del toast' />*
+
+
+
+
+

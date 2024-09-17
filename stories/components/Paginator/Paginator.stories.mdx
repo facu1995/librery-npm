@@ -1,0 +1,75 @@
+import { Meta } from '@storybook/addon-docs';
+import {Paginator} from '../../../components';
+
+<Meta title="Infosis/BuildingBlocks/Paginator/Overview" />
+
+<style>
+  {`
+    h1 {
+      color: #383C54 !important;
+      max-width: 32ch !important;
+    }
+    h2, h3, h4 {
+      max-width: 59ch !important;
+      color: #383C54 !important;
+    }
+    ul{
+      max-width: 70ch!important
+      color: #383C54 !important;
+    }
+    li {
+      color: #383C54 !important;
+    }
+    p {
+      margin: .5rem 0 !important;
+      font-size: 1rem !important;
+      color: #494E6E !important;
+    } 
+    .language-plaintext>span{
+      font-weight: lighter !important;
+      color: #494E6E !important;
+    }
+    .language-plaintext{
+        color: #494E6E !important;
+    }
+    p>span, li>span{
+        font-weight: bold;
+
+    }
+
+    img {
+      max-width: 650px !important;
+      height: auto;
+      margin: auto !important;
+    }
+    .small-img{
+      min-width: 900px !important;
+      object-fit: cover;
+    }
+  `}
+</style>
+
+# < Paginator /> ⚙️
+
+
+Este componente cumple la función de informar al usuario cuando está viendo contenido paginado y ofrece capacidad para manejar ese paginado.
+
+```
+<Paginator handleChange={()=>{}} />
+
+```
+
+<Paginator handleChange={()=>{}} />
+
+<br />
+<br />
+
+## Propiedades currentPage y maxPages
+
+
+Además del handleChange, Paginator puede recibir dos props más.
+<ul>
+    <li><span>currentPage : </span> representa la página actual, su valor por defecto es 1. Para un uso correcto, debería actualizarse cada vez que se realiza una solicitud de una página más.</li>
+    <li><span>maxPages :</span>representa el número de la última página disponible. El valor de currentPage no puede exceder el valor de maxPages</li>
+
+</ul>

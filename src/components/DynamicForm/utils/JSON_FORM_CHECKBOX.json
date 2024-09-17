@@ -1,0 +1,49 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "satisfaction": {
+      "type": "number",
+      "data" : {
+        "title" : "satisfaction",
+        "label" : "¿Qué tan satisfecho está con el servicio? *",
+        "placeholder": "",
+        "type" : "radio",
+        "options" : [
+          {"label":"Insatisfecho", "value":1},
+          {"label":"Algo satisfecho", "value":2}, 
+          {"label":"Satisfecho", "value":3}, 
+          {"label": "Muy satisfecho", "value": 4},
+          {"label": "Super satisfecho", "value": 5}],
+        "default" : "Satisfecho"
+      }
+      },
+      "dateOfService": {
+        "type" : "string",
+        "data": {
+          "title" : "dateOfService",
+          "label" : "¿Cuándo contrató el servicio? *",
+          "placeholder": "",
+          "type" : "date",
+          "options" : [],
+          "default" : ""
+        }
+      },
+      "subscribe" : {
+        "type" : "boolean",
+        "data" : {
+          "title" : "subscribe",
+          "label" : "¿Desea subscribirse a nuestras novedades?",
+          "placeholder": "",
+          "type" : "checkbox",
+          "options" : [],
+          "default" : true
+        }
+      }
+    }
+  ,
+  "required": [
+    "satisfaction",
+    "dateOfService"
+  ]
+}

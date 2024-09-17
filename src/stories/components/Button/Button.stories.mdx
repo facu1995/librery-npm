@@ -1,0 +1,87 @@
+import { Meta } from '@storybook/addon-docs';
+import {Button} from '../../../components'
+
+<Meta title="Infosis/BuildingBlocks/Button/Overview" />
+
+
+<style>
+  {`
+    h1 {
+      color: #383C54 !important;
+      max-width: 32ch !important;
+    }
+    h2, h3, h4 {
+      max-width: 59ch !important;
+      color: #383C54 !important;
+    }
+    ul{
+      max-width: 70ch!important
+    }
+    li {
+      font-size: 1rem !important;
+      margin: .5rem 0 !important;
+      color: #494E6E !important;
+    } 
+    li>span{
+      font-weight: bolder;
+    }
+    p {
+      margin: .5rem 0 !important;
+      font-size: 1rem !important;
+      color: #494E6E !important;
+    } 
+    div:not(.language-plaintext)>span{
+      font-weight: bolder;
+      color: #494E6E !important;
+    }
+    .language-plaintext>span{
+      font-weight: lighter !important;
+      color: #494E6E !important;
+    }
+    .language-plaintext{
+        color: #494E6E !important;
+    }
+    p>span{
+        font-weight: bold;
+    }
+    span{
+        color: #494E6E !important;
+        font-weight: bold;
+    }
+    img {
+      max-width: 650px !important;
+      height: auto;
+      margin: auto !important;
+    }
+    .small-img{
+      min-width: 900px !important;
+      object-fit: cover;
+    }
+  `}
+</style>
+
+# < Button /> ⚙️
+
+Componente reutilizable para renderear una etiqueta button. A tráves de sus props podemos modificar su contenido y su comportamiento ante la interacción del usuario, así como manejar su disponibilidad
+
+Su única propiedad obligatoria es 'label', que representa el nodo de texto dentro del botón. 
+
+```
+<Button label='Demo Button' />
+
+```
+*<Button label='Demo Button' />*
+
+<br />
+
+## Tipos de botón 
+
+
+Un botón puede ser visible pero no estar habilitado para el usuario hasta que se cumpla cierta condición. como sucede en el botón 'Confirmar' de [DynamicForm](https://storybook.infosis.tech/?path=/story/infosis-buildingblocks-forms--adaptable-form), que está desabilitado hasta que se cumplan todas las validaciones. Podemos accionar este comportamiento con la prop 'type', que acepta uno de N valores definidos en la librería (revisar propiedades en las stories). Para un botón que no se puede clickear, usamos type='disabled'.
+
+
+```
+<Button label='Disabled Button' type='disabled'/>
+
+```
+*<Button label='Disabled Button' type='disabled'/>*

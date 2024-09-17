@@ -1,0 +1,9 @@
+.backButton{
+    color: #989EBA;
+    cursor: pointer;
+    padding: 8px;
+}
+
+button.backButton img {
+    filter: brightness(0) saturate(100%) invert(50%) sepia(2%) saturate(5186%) hue-rotate(197deg) brightness(77%) contrast(92%) !important;
+}

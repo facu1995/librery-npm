@@ -1,0 +1,90 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "dateOf" : {
+      "type" : "string",
+      "data" : {
+        "title" : "dateOf",
+        "label" : "Fecha de",
+        "placeholder": "",
+        "type" : "radio",
+        "options" : [
+          {"label":"Creación", "value":"created"},
+          {"label":"Actualización", "value":"updated"}], 
+        "default" : "created"
+      }
+    },
+    "createdFrom": {
+      "type" : "string",
+      "data" : {
+        "title" : "createdFrom",
+        "label" : "Creado desde",
+        "placeholder": "",
+        "type" : "date",
+        "options" : [],
+        "default" : ""
+      }
+    },
+    "createdUntil" : {
+      "type" : "string",
+      "data" : {
+        "title" : "createdUntil",
+        "label" : "Creado hasta",
+        "placeholder": "",
+        "type" : "date",
+        "options" : [],
+        "default" : ""
+      }
+    },
+    "byState" : {
+      "type" : "string",
+      "data" : {
+        "title" : "byState",
+        "label" : "Por estado",
+        "placeholder": "Filtre por estado...",
+        "type" : "select",
+        "options" : [
+            {"label":"Todos los estados", "value":""},
+            {"label":"Abierto", "value":"Abierto"},
+            {"label":"Esperando tu respuesta", "value":"Respuesta"},
+            {"label":"Confirmar resolución", "value":"Confirmar"},
+            {"label":"Cerrado", "value":"Cerrado"}
+        ],
+        "default" : ""
+      }
+    },
+    "adressedTo" : {
+      "type" : "string",
+      "data" : {
+        "title" : "adressedTo",
+        "label" : "Dirigido a",
+        "placeholder": "Filtre por destinatario...",
+        "type" : "select",
+        "options" : [
+            {"label":"Dirigido a todos", "value":""},
+            {"label":"Administración", "value":"Administración"},
+            {"label":"Atención al cliente", "value":"Atención al cliente"},
+            {"label":"Comercial", "value":"Comercial"}
+        ],
+        "default" : ""
+      }
+    },
+    "ticketType": {
+      "type" : "string",
+      "data" : {
+        "title" : "ticketType",
+        "label" : "Tipo de ticket",
+        "placeholder": "Filtre por tipo de ticket...",
+        "type" : "select",
+        "options" : [
+            {"label":"Todos los tickets", "value":""},
+            {"label":"Consulta", "value":"Consulta"},
+            {"label":"Reclamo", "value":"Reclamo"},
+            {"label":"Solicitud", "value":"Solicitud"}
+        ],
+        "default" : ""
+      }
+    }
+    }
+}

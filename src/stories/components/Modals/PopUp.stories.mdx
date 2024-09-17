@@ -1,0 +1,90 @@
+import { Meta } from '@storybook/addon-docs';
+import PopUpStories from '../../../components/PopUp/components/PopUpStories/PopUpStories';
+
+<Meta title="Infosis/BuildingBlocks/PopUp/Overview" />
+
+<style>
+  {`
+    h1 {
+      color: #383C54 !important;
+      max-width: 32ch !important;
+    }
+    h2, h3, h4 {
+      max-width: 59ch !important;
+      color: #383C54 !important;
+    }
+    ul{
+      max-width: 70ch!important
+    }
+    li {
+      font-size: 1rem !important;
+      margin: .5rem 0 !important;
+      color: #494E6E !important;
+    } 
+    li>span{
+      font-weight: bolder;
+    }
+    p {
+      margin: .5rem 0 !important;
+      font-size: 1rem !important;
+      color: #494E6E !important;
+    } 
+    div:not(.language-plaintext)>span{
+      font-weight: bolder;
+      color: #494E6E !important;
+    }
+    .language-plaintext>span{
+      font-weight: lighter !important;
+      color: #494E6E !important;
+    }
+    .language-plaintext{
+        color: #494E6E !important;
+    }
+    p>span{
+        font-weight: bold;
+    }
+    span{
+        color: #494E6E !important;
+        font-weight: bold;
+    }
+    img {
+      max-width: 650px !important;
+      height: auto;
+      margin: auto !important;
+    }
+    .small-img{
+      min-width: 900px !important;
+      object-fit: cover;
+    }
+  `}
+</style>
+
+# < PopUp /> ⚙️
+
+Nuestro modal multipropósito. El componente PopUp puede anidar a otros para mostrarlos como su contenido. Admite una amplica customización, desde el texto de los botones, su cantidad y las funciones asociadas a ellos. Se muestra abierto u oculto según el valor booleano de la propiedad isOpen.
+<p>
+Es importante tener en cuenta que el <span>contenido puede ser cambiado en tiempo de ejecución</span>, por lo que no hace falta tener una instancia del componente por cada modal que necesitemos en nuestra aplicación.
+</p>
+
+<br/>
+
+*<PopUpStories />* 
+
+<br/>
+
+## isOpen, setIsOpen
+
+La propiedad isOpen toma un valor booleano y dependiendo de éste, el modal está abierto o cerrado. La propiedad setIsOpen toma una función que modifica el estado pasado a isOpen. Se usa cuando se toca el botón Cancelar, se hace click por fuera del modal o cuando se presiona el boton para regresar hacia atras.
+
+## isList, isGallery, backButton
+
+El componente PopUp puede recibir una de estas props (isList, isGallery) para mostrar:
+<ul>
+    <li>En el caso de la <span>lista</span>, muestra el componente <a href='https://storybook.infosis.tech/?path=/story/infosis-buildingblocks-tables-table--table-product'> Table </a> y una barra de búsqueda</li>
+    <li>En el caso de la <span>galería</span> muestra una serie de cards, creadas a partir de un arreglo pasado a la propiedad listItem </li>
+    <li>En el caso de que la `prop` <span>backButton</span> se encuentre activada, se muestra un boton con un icono de una flecha con sentido hacia la izquierda que,
+por defecto, oculta el popUp al ser clickeada pero con la prop opcional `actionBtn` se puede determinar su funcionalidad.</li>
+</ul>
+
+<span>Revisar el resto de propiedades en las stories.</span>
+

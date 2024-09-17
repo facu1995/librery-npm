@@ -1,0 +1,87 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "managedTo": {
+        "type": "string",
+        "data" : {
+          "title" : "managedTo",
+          "label" : "Dirigido a *",
+          "placeholder": "Selecciona una opción",
+          "type" : "select",
+          "options" : "https://sb-api-pi1x.onrender.com",
+          "default" : ""
+        },
+        "errMessages" : {
+          "required" : "Este campo no puede quedar vacío"
+        }
+      },
+      "ticketType": {
+        "type": "string",
+        "data" : {
+          "title" : "ticketType",
+          "label" : "Tipo de ticket *",
+          "placeholder" : "Selecciona una opción",
+          "type" : "select",
+          "options" : [
+            {"label":"Selecciona una opción", "value":""},
+            {"label":"Solicitud", "value":"Solicitud"}, 
+            {"label":"Reclamo", "value":"Reclamo"}, 
+            {"label": "Consulta", "value": "Consulta"}
+          ],
+        "default" : ""
+        },
+        "errMessages" : {
+          "required" : "Este campo no puede quedar vacío"
+        }
+      },
+      "summary": {
+        "type": "string",
+        "data" : {
+          "title" : "summary",
+          "label" : "Asunto *",
+          "placeholder" : "Escribe el asunto del ticket",
+          "type" : "textarea",
+          "options" : [],
+          "default" : ""
+        },
+        "errMessages" : {
+          "required" : "Este campo no puede quedar vacío"
+        }
+      },
+      "description": {
+        "type": "string",
+        "minLength" : 5,
+        "maxLength" : 288,
+        "data" : {
+          "title" : "description",
+          "label" : "Descripción *",
+          "placeholder" : "Escribe la descripción del ticket",
+          "type" : "textarea",
+          "options" : [],
+          "default" : ""
+        },
+        "errMessages" : {
+          "minLength" : "La descripción debe tener como mínimo 5 carácteres",
+          "maxLength" : "La descripción debe tener como máximo 288 carácteres",
+          "required" : "Este campo no puede quedar vacío"
+        }
+       },
+      "attachedFiles" : {
+        "type": "array",
+        "data" : {
+          "title" : "attachedFiles",
+          "label" : "Adjunto",
+          "placeholder": "",
+          "type" : "file",
+          "options" : [],
+          "default" : []
+        }
+      }
+    },
+    "required": [
+      "ticketType",
+      "summary",
+      "description"
+    ]
+  }

@@ -1,0 +1,78 @@
+@keyframes click-wave {
+    0% {
+        background-color: #546DFE;
+        opacity: .5;
+    }
+    100% {
+        transform: scale(3.5);
+        opacity: 0;
+    }
+}
+
+/* .radioGroup{
+    width: 260px;
+} */
+
+.radioContainer{
+    display: flex;
+    flex-direction: row;
+    height: 5rem;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    width: fit-content;
+    height: 100%;
+    border: none;
+}
+.radioContainer>div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    max-width: fit-content;
+}
+
+.radioContainer label{
+    color: var(--color-txt-gris-oscuro);
+    font-size: 1rem;
+    width: fit-content;
+}
+
+.radioContainer input{
+    cursor: pointer;
+    position: relative;
+}
+
+input::after{
+    content: " ";
+    z-index: -1;
+    background-color: rgba(164, 164, 164, 0.222);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scale(2);
+    border-radius: 50%;
+    opacity: 0;
+    transition: transform .3s ease-in-out, background-color .5s ease-out, opacity .3s ease-in-out;
+
+}
+input:hover::after{
+    opacity: 1;
+}
+input:checked::after{
+    animation: click-wave 0.65s;
+}
+
+
+.error>span{
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+.error textarea, .error select, .error input{
+    border-color: var(--color-txt-rojo);
+    outline-color: var(--color-txt-rojo);
+}

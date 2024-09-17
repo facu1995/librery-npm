@@ -1,0 +1,72 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Infosis/Layout/Nav/Overview" />
+
+<style>
+  {`
+    h1 {
+      color: #383C54 !important;
+      max-width: 32ch !important;
+    }
+    h2, h3, h4 {
+      max-width: 59ch !important;
+      color: #383C54 !important;
+    }
+    ul{
+      max-width: 70ch!important
+    }
+    p {
+      margin: .5rem 0 !important;
+      font-size: 1rem !important;
+      color: #494E6E !important;
+    } 
+    .language-plaintext>span{
+      font-weight: lighter !important;
+      color: #494E6E !important;
+    }
+    .language-plaintext{
+        color: #494E6E !important;
+    }
+    p>span{
+        font-weight: bold;
+    }
+
+    img {
+      max-width: 650px !important;
+      height: auto;
+      margin: auto !important;
+    }
+    .small-img{
+      min-width: 900px !important;
+      object-fit: cover;
+    }
+    .search{
+        width: 100%;
+        display: flex;
+        justify-content:center;
+    }
+  `}
+</style>
+
+# < Nav /> ⚙️
+
+El componente Nav muestra una lista de links creadas a partir de su propiedad routes, que toma un arreglo de objetos siguiendo la interfaz RouteData. Dependiendo de los valores recibidos, el elemento Nav puede ser vertical, horizonal, tener o no sombra y ser o no colapsable con el toque de un botón.
+
+```
+NavProps {
+  routes: RouteData[];
+  shadow?: boolean;
+  button?: boolean;
+  direction?: 'row' | 'column';
+}
+RouteData {
+    path: string;
+    element: React.JSX.Element;
+    icon: any;
+}
+```
+### Notas
+
+Este componente usa la librería react-router-dom, por lo que debe estar envuelto en algun componente <a href="https://reactrouter.com/en/main/router-components/browser-router" target="blank">Router</a> para ser usado.
+
+<br /> 

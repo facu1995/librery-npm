@@ -1,0 +1,80 @@
+
+import { Meta } from '@storybook/addon-docs';
+import { TICKET_PAGE_BUTTONS } from './utils.tsx';
+import {Header} from "../../../components";
+
+
+<Meta title="Infosis/Layout/Header/Overview" />
+
+<style>
+  {`
+    h1 {
+      color: #383C54 !important;
+      max-width: 32ch !important;
+    }
+    h2, h3, h4 {
+      max-width: 59ch !important;
+      color: #383C54 !important;
+    }
+    ul{
+      max-width: 70ch!important
+    }
+    p {
+      margin: .5rem 0 !important;
+      font-size: 1rem !important;
+      color: #494E6E !important;
+    } 
+    div:not(.language-plaintext)>span{
+      font-weight: bolder;
+      color: #494E6E !important;
+    }
+    .language-plaintext>span{
+      font-weight: lighter !important;
+      color: #494E6E !important;
+    }
+    .language-plaintext{
+        color: #494E6E !important;
+    }
+    p>span{
+        font-weight: bold;
+    }
+    span{
+        color: #494E6E !important;
+        font-weight: bold;
+    }
+    img {
+      max-width: 650px !important;
+      height: auto;
+      margin: auto !important;
+    }
+    .small-img{
+      min-width: 900px !important;
+      object-fit: cover;
+    }
+  `}
+</style>
+
+# < Header /> ⚙️
+
+Este es un componente para generar rápidamente un header con el logo de INFOSIS del lado izquierdo, dando la opción de añadir un children por prop para mostrar a la derecha.
+
+```
+///chidren to render
+const TICKET_PAGE_BUTTONS = (
+  <>
+    <Counter color="secondary" label="Esperando respuesta" amount={0} />
+    <Counter color="principal" label="Confirmar resolución" amount={0} />
+    <Button
+      type="primary"
+      label="+ Crear Ticket"
+      size="larger"
+      borderRadius={5}
+    />
+  </>
+);
+
+<Header children={TICKET_PAGE_BUTTONS}/>
+
+```
+
+<Header children={TICKET_PAGE_BUTTONS}/>

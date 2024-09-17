@@ -1,0 +1,111 @@
+import { Meta } from '@storybook/addon-docs';
+import { TreeTraverser } from '../../../components'
+
+<Meta title="Infosis/BuildingBlocks/TreeTraverser/Overview" />
+
+<style>
+  {`
+    h1 {
+      color: #383C54 !important;
+      max-width: 32ch !important;
+    }
+    h2, h3, h4 {
+      max-width: 59ch !important;
+      color: #383C54 !important;
+    }
+    ul{
+      max-width: 70ch!important
+    }
+    p {
+      margin: .5rem 0 !important;
+      font-size: 1rem !important;
+      color: #494E6E !important;
+    } 
+    div:not(.language-plaintext)>span{
+      font-weight: bolder;
+      color: #494E6E !important;
+    }
+    .language-plaintext>span{
+      font-weight: lighter !important;
+      color: #494E6E !important;
+    }
+    .language-plaintext{
+        color: #494E6E !important;
+    }
+    p>span{
+        font-weight: bold;
+    }
+    span{
+        color: #494E6E !important;
+        font-weight: bold;
+    }
+    img {
+      max-width: 650px !important;
+      height: auto;
+      margin: auto !important;
+    }
+    .small-img{
+      min-width: 900px !important;
+      object-fit: cover;
+    }
+  `}
+</style>
+
+# < TreeTraverser /> ⚙️
+
+El componente <span>Tree Traverser</span> permite la navegación por distintas secciones utilizando 
+una estructura de árbol para llegar desde el nodo padre hasta el nodo hijo.
+
+<br />
+
+## Propiedades
+
+El componente <span>Tree Traverser</span> puede recibir las siguientes propiedades:
+<ul>
+    <li><span>data :</span> Objeto que contiene el volumen de datos a renderizar. 
+    Observar los detalles de esta *prop* en la sección **Data**</li>
+    <li>fatherProp: Patrón mediante el cual se realiza la navegación por el árbol</li>
+    <li>set: Función que actualiza el estado correspondiente de la función *set* pasada</li>
+    <li>validate: Función definida con el propósito de desplegar el componente</li>
+    <li>invalidate: Función definida con el propósito de ocultar el componente</li>
+  </ul>
+Observar que las *props* destacadas en negrita son obligatorias para el correcto funcionamiento del componente.
+
+<br />
+
+### Data
+
+El componente tiene la *prop* obligatoria **data** que contiene el volumen de datos a renderizar. 
+
+<span>Data</span> es un arreglo de tipo `TreeStructure` que cuenta con la siguiente interfaz:
+
+```
+    interface TreeStructure {
+      [key: string]: string | number | boolean | undefined | never[];
+      id: string;
+      description: string;
+    }
+```
+
+Donde tiene definidas las propiedades `id` y `description`. 
+
+La notación `[key: string]: string | number | boolean | undefined | never[];`
+permite agregar de manera opcional propiedades donde la clave es de tipo `string` y su valor puede ser cualquiera de los que se muestra
+a continuación.
+
+<br />
+
+### fatherProp
+
+La *prop* opcional *fatherProp* determina el patrón mediante el cual se va a realizar la navegación. 
+
+Por ejemplo, si se determina un volumen de datos con productos y se asigna `fatherProp='fatherId'`, 
+la navegación por el árbol se va realizar teniendo en cuenta si, el `id` del producto seleccionado coincide 
+con el valor de `fatherId` de cualquier otro producto, entonces se van a listar todos aquellos donde haya 
+coincidencia hasta seleccionar un producto que no tenga la propiedad `fatherId`. 
+
+<br /> 
+
+<span>NOTA:</span> En un ejemplo que no sea de modelo, se recomienda fuertemente la práctica del *hook* `useContext` 
+en lugar de utilizar estados locales y compartirlos mediante *props*; y de la libreria <a href='https://redux-toolkit.js.org/' target='blank'>Redux</a> para el manejo de estados y acciones globales.  
+<br /> 

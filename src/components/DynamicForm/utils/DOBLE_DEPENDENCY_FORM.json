@@ -1,0 +1,55 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "provincia": {
+        "type": "string",
+        "data" : {
+          "title" : "provincia",
+          "label" : "Elige una provincia",
+          "placeholder": "",
+          "type" : "select",
+          "options" : [
+            {"label":"Jujuy", "value":"Jujuy"},
+            {"label":"Catamarca", "value":"Catamarca"}, 
+            {"label":"La Rioja", "value":"La Rioja"}], 
+          "default" : ""
+        }
+    },
+      "ciudad": {
+        "type" : "string",
+        "data": {
+          "dependentOn" : "provincia",
+          "title" : "ciudad",
+          "label" : "Elige una ciudad",
+          "placeholder": "",
+          "type" : "select",
+          "options" : "https://sb-api-pi1x.onrender.com/cities",
+          "default" : ""
+        },
+        "errMessages" : {
+            "required" : "Elige una ciudad"
+        }
+      },
+      "barrio": {
+        "type" : "string",
+        "data": {
+          "dependentOn" : "ciudad",
+          "title" : "barrio",
+          "label" : "Elige un barrio",
+          "placeholder": "",
+          "type" : "select",
+          "options" : "https://sb-api-pi1x.onrender.com/cities",
+          "default" : ""
+        },
+        "errMessages" : {
+            "required" : "Elige un barrio"
+        }
+      }
+      },
+    "required" : [
+        "barrio",
+        "ciudad"
+    ]
+  }
+  

@@ -1,0 +1,90 @@
+import { Meta } from '@storybook/addon-docs';
+import INFOSIS from './assets/logo-infosis.png';
+
+<Meta title="DOCS/ Storybook" />
+
+<style>
+  {`
+    ul{
+      max-width: 70ch!important
+    }
+    li {
+      font-size: 1rem !important;
+      margin: .5rem 0 !important;
+      color: #494E6E !important;
+    } 
+    li>span{
+      font-weight: bolder;
+    }
+    .logo{
+      width: 200px;
+      margin-bottom: 2rem;
+    }
+    h1 {
+      color: #383C54 !important;
+      max-width: 32ch !important;
+    }
+    h3 {
+      max-width: 59ch !important;
+      color: #383C54 !important;
+    }x
+    ul{
+      max-width: 70ch!important
+    }
+    p {
+      margin: .5rem 0 !important;
+      font-size: 1rem !important;
+      color: #494E6E !important;
+    } 
+    div:not(.langauge-plaintext)>span{
+      font-weight: bolder;
+      color: #494E6E !important;
+    }
+    p>span{
+        font-weight: bold;
+    }
+    img {
+      max-width: 650px !important;
+      height: auto;
+      margin: auto !important;
+    }
+    .small-img{
+      min-width: 900px !important;
+      object-fit: cover;
+    }
+  `}
+</style>
+
+<img src={INFOSIS} alt="logo-infosis" class="logo"/>
+
+<br />
+<br />
+
+
+# Te damos la bienvenida a la librería de componentes de Infosis  🤖 📘
+<br />
+
+## Esta página contiene la documentación y te permite visualizar los componentes de nuestra librería React de uso interno.
+
+<br />
+
+<ul>
+  <li>
+    <span>En el sidebar (lo abrís y cerrás con la tecla S)</span> podés navegar por las categorías y revisar cada componente por separado, entrando a todas sus stories.
+  </li>
+  <li>
+    Podés <span>modificar sus props y observar los cambios en la UI en tiempo real</span> desde la pestaña de controles (desplegala con tecla A o D)
+  </li>
+  <li>
+    Para ver tu componenten en pantalla completa, apretá la tecla F.
+  </li>
+  <li>
+    En el apartado <span>DOCS</span> dentro de cada componente, podés ver una breve descripción de cada parámetro, ver que tipos acepta y copiar el código necesario para llamar a los componentes en tu proyecto.
+  </li>
+  <li>
+    Cada componente incluye un documento <span>Overview</span>, donde se describe su correcto uso.
+  </li>
+  <li>
+    El paquete conteniendo esta librería está en desarrollo, cuando esté listo estará <a href="#">acá</a>. Mientras tanto, podés consumir los componentes descargando <a href="https://gitlab.infosisglobal.com/frontend/storybook">este repositorio</a> y copiando el directorio con el componente que quieras.
+  </li>
+</ul>

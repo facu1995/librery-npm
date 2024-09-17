@@ -1,0 +1,19 @@
+
+.true content{
+    grid-template-rows: 1fr;
+}
+
+.content{
+    min-height: 0;
+}
+
+.collapse{
+    display: grid;
+    grid-template-rows: 0fr;
+    overflow: hidden;
+    transition: grid-template-rows .5s;
+}
+
+.true{
+    grid-template-rows: 1fr;
+}

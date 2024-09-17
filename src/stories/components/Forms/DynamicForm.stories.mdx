@@ -1,0 +1,81 @@
+import { Meta } from '@storybook/addon-docs';
+
+
+<Meta title="Infosis/BuildingBlocks/Forms/Overview" />
+
+<style>
+  {`
+    h1 {
+      color: #383C54 !important;
+      max-width: 32ch !important;
+    }
+    h2, h3, h4 {
+      max-width: 59ch !important;
+      color: #383C54 !important;
+    }
+    ul{
+      max-width: 70ch!important
+    }
+    p {
+      margin: .5rem 0 !important;
+      font-size: 1rem !important;
+      color: #494E6E !important;
+    } 
+    div:not(.language-plaintext)>span{
+      font-weight: bolder;
+      color: #494E6E !important;
+    }
+    .language-plaintext>span{
+      font-weight: lighter !important;
+      color: #494E6E !important;
+    }
+    .language-plaintext{
+        color: #494E6E !important;
+    }
+    p>span{
+        font-weight: bold;
+    }
+    span{
+        color: #494E6E !important;
+        font-weight: bold;
+    }
+    img {
+      max-width: 650px !important;
+      height: auto;
+      margin: auto !important;
+    }
+    .small-img{
+      min-width: 900px !important;
+      object-fit: cover;
+    }
+  `}
+</style>
+
+# < DynamicForm /> ⚙️
+
+<br /> 
+
+## Formulario dinámico
+
+El componente DynamicForm es el que usamos para todos los formularios, no importa su nivel de complejidad. Recibe un JSONSchema como valor de la propiedad 'json' y a partir del mismo renderea los inputs necesarios y genera las reglas de validación. Si el valor de la propiedad json es falsy muestra un spinner, si se le pasa un objecto vacío (o cualquier cosa que no sea un JSONSchema) muestra un mensaje de error.
+
+```
+import FORM_JSON from '../utils/json-schema-form.json'
+
+<DynamicForm json={FORM_JSON} handleSubmit={ (values) => console.log(values) } />
+```
+
+<span>Este componenente no tiene un tamaño propio, está hecho para adaptarse a un contenedor.</span>
+
+Una especificación sobre el objeto que recibe este componente para crear el formulario puede verse [aquí](https://drive.google.com/file/d/1-0CrTLkvraYF7AIoCQ_mB8zvzgBXCzWh/view?usp=sharing), incluyendo una descripción detallada de cada parte del JSONSchema y un repositorio de ejemplos de DTOs válidos.
+<br/>
+
+### Formulario sin validaciones
+
+Si no hace falta realizar validaciones a los inputs de un formulario, podemos hacer uso de la propiedad 'validate' del componente. Esta propiedad tiene como valor por defecto 'true'.
+
+```
+import NO_VALIDATIONS_JSON from '../utils/json-schema-form.json'
+
+<DynamicForm json={NO_VALIDATIONS_JSON} handleSubmit={} validate={ false } />
+```

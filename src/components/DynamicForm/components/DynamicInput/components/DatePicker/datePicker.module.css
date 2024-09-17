@@ -1,0 +1,71 @@
+.date {
+    min-height: 3.4rem;
+    height: 3.4rem;
+    width: 100%;
+    padding: 0 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 2px;
+    border: 1px solid var(--color-gris);
+}
+
+.date:focus{
+    outline: #546DFE;
+    border-color: #546DFE;
+}
+
+.datePicker{
+    position: relative;
+    max-height: 100px !important;
+}
+.datePicker img{
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    right: 1rem;
+    bottom: 1rem;
+    filter: invert(38%) sepia(48%) saturate(3306%) hue-rotate(219deg) brightness(101%) contrast(99%);
+}
+
+.pickerButtonDrop{
+    position: absolute;
+    background-color: rgba(126, 122, 244, 0.204);
+    color: rgba(126, 122, 244, 0.204);
+    width: 2.7rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    right: .4rem;
+    bottom: .4rem;
+    opacity: 0;
+    display: grid;
+    z-index: 1;
+    place-items: center;
+    transition: opacity .2s ease-in-out;
+}
+
+.datePicker img:hover + .pickerButtonDrop{
+    opacity: 1;
+}
+
+
+.error>span{
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+.error textarea, .error select, .error input{
+    border-color: var(--color-txt-rojo);
+    outline-color: var(--color-txt-rojo);
+}
+
+.picker{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    position: absolute;
+    top: 4.2rem;
+    z-index: 4;
+    background-color: white;
+    padding: 15px ;
+    border-radius: 3px;
+    color: rgb(69, 69, 69);
+    box-shadow: -2px 2px 5px rgb(0, 0, 0, .5);
+}

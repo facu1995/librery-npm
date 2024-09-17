@@ -1,0 +1,73 @@
+import { Meta } from '@storybook/addon-docs';
+import {Label, Tooltip} from '../../../components';
+
+<Meta title="Infosis/BuildingBlocks/Label/Overview" />
+
+<style>
+  {`
+    h1 {
+      color: #383C54 !important;
+      max-width: 32ch !important;
+    }
+    h2, h3, h4 {
+      max-width: 59ch !important;
+      color: #383C54 !important;
+    }
+    ul{
+      max-width: 70ch!important
+    }
+    p {
+      margin: .5rem 0 !important;
+      font-size: 1rem !important;
+      color: #494E6E !important;
+    } 
+    .language-plaintext>span{
+      font-weight: lighter !important;
+      color: #494E6E !important;
+    }
+    .language-plaintext{
+        color: #494E6E !important;
+    }
+    p>span{
+        font-weight: bold;
+    }
+
+    img {
+      max-width: 650px !important;
+      height: auto;
+      margin: auto !important;
+    }
+    .small-img{
+      min-width: 900px !important;
+      object-fit: cover;
+    }
+  `}
+</style>
+
+# < Label /> ⚙️
+
+
+
+El componente Label muestra una etiqueta con el texto que le pasemos en la propiedad 'label'. Podemos modificar con props su tamaño, la capitalización y los colores de fuente y fondo.
+<p>
+<span>Este componenente no tiene un tamaño propio, está hecho para adaptarse a un contenedor.</span>
+</p>
+
+```
+    <Label label='Label Docs' size='h3' backgroundColor='pink' isImportant />
+```
+
+## isImportant prop
+
+La propiedad isImportant tiene como valor por defecto true. Si se la añadimos a nuestro Label, se renderea un ícono a su lado para indicar que es importante.
+<br />
+
+<Label label='Label Docs' size='h3' backgroundColor='pink' isImportant />
+
+## children prop
+
+Label puede recibir JSX como children, pero solo deberíamos usarla para pasarle un [Tooltip](https://storybook.infosis.tech/?path=/story/infosis-buildingblocks-tooltip-overview--page), ya que pasarle algún otro elemento rompería el texto del label.
+<br />
+<Label label='Label con tooltip' size='h3' backgroundColor='pink'>
+    <Tooltip info='texto oculto' />
+</Label>    

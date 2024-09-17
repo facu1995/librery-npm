@@ -1,0 +1,122 @@
+
+.list_element_estado_abierto_body {
+    background: #f4e9ff;
+    border-radius: 40px;
+    width: 85px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 24px;
+    color: hsl(270, 100%, 68%);
+    text-transform: capitalize;
+}
+
+.list_element_estado_esperando_body {
+    background: #fef2e4;
+    border-radius: 40px;
+    width: 161px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 24px;
+    text-transform: capitalize;
+    color: #FF9E2C
+}
+
+.list_element_estado_confirmar_body {
+    background: #e8ebff;
+    border-radius: 40px;
+    width: 148px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: capitalize;
+    line-height: 24px;
+    color: #546DFE;
+}
+
+.list_element_estado_cerrado_body {
+    background: #e7f9f3;
+    border-radius: 40px;
+    width: 85px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: capitalize;
+    line-height: 24px;
+    color: #47D1A0;
+}
+
+.list_element_estado_abierto_header {
+    background: #f4e9ff;
+    border-radius: 40px;
+    width: 100px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: capitalize;
+    line-height: 31px;
+    color: hsl(270deg, 100%, 68%);
+    right: 20px;
+    position: absolute;
+    top: -5px;
+}
+
+.list_element_estado_esperando_header {
+    background: #fef2e4;
+    border-radius: 40px;
+    width: 190px;
+    font-style: normal;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: capitalize;
+    line-height: 31px;
+    color: #FF9E2C;
+    right: 20px;
+    position: absolute;
+    top: -5px;
+}
+
+.list_element_estado_confirmar_header{
+    background: #e8ebff;
+    border-radius: 40px;
+    width: 180px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: capitalize;
+    line-height: 31px;
+    color: #546DFE;
+    right: 20px;
+    position: absolute;
+    top: -5px;
+}
+
+.list_element_estado_cerrado_header {
+    background: #e7f9f3;
+    border-radius: 40px;
+    width: 110px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: capitalize;
+    line-height: 31px;
+    color: #47D1A0;
+    right: 20px;
+    position: absolute;
+    top: -5px;
+}
+.list_element_estado_body {
+    width: 190px;
+    text-align: -webkit-center;
+    align-self: center;
+    min-width: 165px;
+    text-align: -moz-center;
+}
+.list_element_estado_header {
+    width: 190px;
+    text-align: -webkit-center;
+    right: 45px;
+    position: absolute;
+    text-align: -moz-center;
+}

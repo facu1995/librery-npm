@@ -1,0 +1,152 @@
+import { Meta } from '@storybook/addon-docs';
+import APP_DEMO from './assets/APP_EJEMPLO_LIBRERIA.png';
+import APP_DEMO_TS from './assets/APP_EJEMPLO_TYPESCRIPT.png';
+import APP_DEMO_ERROR from './assets/APP_EJEMPLO_ERROR.png';
+
+<Meta title="DOCS/Uso y ejemplos" />
+
+<style>
+  {`
+    ul{
+      max-width: 70ch!important
+    }
+    li {
+      font-size: 1rem !important;
+      margin: .5rem 0 !important;
+      color: #494E6E !important;
+    } 
+    li>span{
+      font-weight: bolder;
+    }
+    .logo{
+      width: 200px;
+      margin-bottom: 2rem;
+    }
+    h1 {
+      color: #383C54 !important;
+      max-width: 32ch !important;
+    }
+    h3 {
+      max-width: 59ch !important;
+      color: #383C54 !important;
+    }x
+    ul{
+      max-width: 70ch!important
+    }
+    p {
+      margin: .5rem 0 !important;
+      font-size: 1rem !important;
+      color: #494E6E !important;
+    } 
+    div:not(.langauge-plaintext)>span{
+      font-weight: bolder;
+      color: #494E6E !important;
+    }
+    p>span{
+        font-weight: bold;
+    }
+    img {
+      max-width: 650px !important;
+      height: auto;
+      margin: auto !important;
+    }
+    .small-img{
+      min-width: 900px !important;
+      object-fit: cover;
+    }
+  `}
+</style>
+
+
+# Uso y ejemplos ✍️
+
+
+
+- [Uso e instalación](#consumiendo-componentes) 
+- [Ejemplo](#demo-app) 
+- [Testeando localmente](#testeando-localmente) 
+
+
+
+## Consumiendo componentes
+<br />
+
+<code>
+    instrucciones para instalar (aún no disponibles)
+</code>
+
+Para acceder al paquete debes estar conectado a tráves de <span>la VPN de la empresa.</span>
+
+Los componentes están exportados como <span>módulos de EcmaScript</span>, los vas a importar de esta manera:
+
+`import {Button,  Counter,  DynamicForm,  Header,  PopUp} from 'infosis-components'`
+
+La librería está escrita y soporta Typescript, para obtener toda la información sobre los componentes declará 'infosis-components' como módulo en tu archivo index.d.ts
+
+`declare module 'infosis-components'`
+
+
+## Demo app
+
+Consideremos el caso de una aplicación sencilla construida a partir de esta librería. Presenta un formulario creado a partir de un JSON, cuyos campos se van poblando haciendo peticiones a una api según el valor ingresado en el campo anterior. Nos trae una lista de productos que se abre en un modal, y podemos filtrar los productos haciendo más peticiones al backend.
+
+El código de nuestra app se ve así:
+<br />
+<img src={APP_DEMO} />
+<br />
+<p>
+Si hacemos hover sobre un componente, vemos como el compilador de typescript nos muestra todas las props y tipos que necesitamos conocer para usarlo
+</p>
+<br />
+<img src={APP_DEMO_TS} class='small-img'/>
+<br />
+<p>
+Si estamos usando VSCode, su motor basado en Typescript nos alertará cuando invoquemos un componente sin declarar alguna de sus props fundamentales
+</p>
+<br />
+<img src={APP_DEMO_ERROR} class='small-img' />
+<br />
+<p>
+Una pequeña demostración del funcionamiento de la app puede verse en  
+<a href="https://www.loom.com/share/e51f7e3cc1dd4c108b36359389ead2c6" target="_blank"> este link</a>
+</p>
+ <br/>
+
+
+## Testeando localmente
+
+Si estás desarrollando un nuevo componente o resolviendo algún error de la libería, puede que prefieras probar los cambios en un ambiente local en vez de publicar una nueva versión a la red de distribución.
+
+Para esto deberás contar con tu copia local del repositorio de la librería y una aplicación de React para realizar las pruebas. Usaremos NPM LINK para enlazar la libería como paquete en la aplicación; hay una cosa importante a tener en cuenta que es que ambos directorios deben estar usando la misma instancia de 'react' y 'react-dom'.
+
+Suponiendo que tengamos un directorio 'LIB TESTING' con dos directorios dentro, uno 'infosis-components' (la librería) y otro 'testing-app', estos pasos te permitirán testear localmente.
+<br />
+<span>1-En la raíz de 'infosis-components', ejecutaremos:</span>
+
+`npm link ../testing-app/node_modules/react ../testing-app/node_modules/react-dom`. 
+
+Esto enlaza las dependencias encargadas de renderear los componentes.
+<br />
+<span>2-En la raíz de 'infosis-components' ejecutamos:</span>
+
+`npm link`.
+
+ Esto prepara la referencia que tomaremos desde la app.
+<br />
+<span>3-En la raíz de 'testing-app' ejecutamos:</span>
+
+`npm link infosis-components`
+<br />
+<span>4-Llamamos nuestros componentes igual que en el caso de uso normal (cómo módulos ESM de 'infosis-components')</span>
+<br />
+<br />
+<p><span>5-Para recibir toda la información de los tipos, declaramos el módulo en nuestro 'index.d.ts' de esta manera:</span>
+`declare module 'infosis-components/dist'`</p>
+<br />
+
+<p>
+<span>NOTA:</span> esta vinculación *no genera una nueva entrada en las dependencias del package.json*. Si querés comprobar que se realizó con exito, corré el comando `ls` dentro de la carpeta node_modules de la app de prueba. infosis-components debería verse en otro color, indicando que es un symlink. Esta vinculación no se hace con el nombre del directorio, sino del nombre de los proyectos (establecido en package.json)
+</p>
+
+
+

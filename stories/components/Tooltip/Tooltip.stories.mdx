@@ -1,0 +1,78 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Infosis/BuildingBlocks/Tooltip/Overview" />
+
+<style>
+  {`
+    h1 {
+      color: #383C54 !important;
+      max-width: 32ch !important;
+    }
+    h2, h3, h4 {
+      max-width: 59ch !important;
+      color: #383C54 !important;
+    }
+    ul{
+      max-width: 70ch!important
+    }
+    li {
+      font-size: 1rem !important;
+      margin: .5rem 0 !important;
+      color: #494E6E !important;
+    } 
+    li>span{
+      font-weight: bolder;
+    }
+    p {
+      margin: .5rem 0 !important;
+      font-size: 1rem !important;
+      color: #494E6E !important;
+    } 
+    .language-plaintext>span{
+      font-weight: lighter !important;
+      color: #494E6E !important;
+    }
+    .language-plaintext{
+        color: #494E6E !important;
+    }
+    p>span{
+        font-weight: bold;
+    }
+    span{
+        color: #494E6E !important;
+        font-weight: bold;
+    }
+    img {
+      max-width: 650px !important;
+      height: auto;
+      margin: auto !important;
+    }
+    .small-img{
+      min-width: 900px !important;
+      object-fit: cover;
+    }
+  `}
+</style>
+
+# < Tooltip /> ⚙️
+
+<br /> 
+
+
+El componente tooltip se incluye como hijo del elemento en el que se quiere incluir. Se mantiene oculto hasta que el usuario final hace hover sobre su padre (el elemento que lo contiene) y desaparece cuando el mouse deja de estar sobre él. Puede contener ya sea texto o un link.
+
+```
+<ParenElement>
+    <Tooltip info='Texto a mostrar' />
+</ParenElement>
+```
+
+## link
+
+Si pasamos un valor a la propiedad link, el tooltip rendeará un elemento anchor en su interior con el valor de la prop 'link' como su 'href'
+
+```
+<ParenElement>
+    <Tooltip info='Texto con link' link='https://unlink.dominio' />
+</ParenElement>
+```

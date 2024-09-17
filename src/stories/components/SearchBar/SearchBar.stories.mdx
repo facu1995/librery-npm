@@ -1,0 +1,64 @@
+import { Meta } from '@storybook/addon-docs';
+import { SearchBar } from '../../../components';
+
+<Meta title="Infosis/BuildingBlocks/SearchBar/Overview" />
+
+<style>
+  {`
+    h1 {
+      color: #383C54 !important;
+      max-width: 32ch !important;
+    }
+    h2, h3, h4 {
+      max-width: 59ch !important;
+      color: #383C54 !important;
+    }
+    ul{
+      max-width: 70ch!important
+    }
+    p {
+      margin: .5rem 0 !important;
+      font-size: 1rem !important;
+      color: #494E6E !important;
+    } 
+    .language-plaintext>span{
+      font-weight: lighter !important;
+      color: #494E6E !important;
+    }
+    .language-plaintext{
+        color: #494E6E !important;
+    }
+    p>span{
+        font-weight: bold;
+    }
+
+    img {
+      max-width: 650px !important;
+      height: auto;
+      margin: auto !important;
+    }
+    .small-img{
+      min-width: 900px !important;
+      object-fit: cover;
+    }
+    .search{
+        width: 100%;
+        display: flex;
+        justify-content:center;
+    }
+  `}
+</style>
+
+# < SearchBar /> ⚙️
+
+Esta es nuestra barra de búsqueda reutilizable. Un componente muy sencillo que muestra un ícono de búsqueda (🔎) y toma como parámetro una función a tráves de la prop 'handle', que se ejecuta cuando se detecta un cambio en el componente. El placeholder está por default en 'Buscar...' pero puede cambiarse a cualquier string a tráves de props.
+
+
+```
+    < SearchBar />
+```
+<div class='search'>
+< SearchBar />
+</div>
+
+   

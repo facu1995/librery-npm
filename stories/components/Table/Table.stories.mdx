@@ -1,0 +1,70 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Infosis/BuildingBlocks/Table/Overview" />
+
+<style>
+  {`
+    h1 {
+      color: #383C54 !important;
+      max-width: 32ch !important;
+    }
+    h2, h3, h4 {
+      max-width: 59ch !important;
+      color: #383C54 !important;
+    }
+    ul{
+      max-width: 70ch!important
+    }
+    li {
+      font-size: 1rem !important;
+      margin: .5rem 0 !important;
+      color: #494E6E !important;
+    } 
+    li>span{
+      font-weight: bolder;
+    }
+    p {
+      margin: .5rem 0 !important;
+      font-size: 1rem !important;
+      color: #494E6E !important;
+    } 
+    .language-plaintext>span{
+      font-weight: lighter !important;
+      color: #494E6E !important;
+    }
+    .language-plaintext{
+        color: #494E6E !important;
+    }
+    p>span{
+        font-weight: bold;
+    }
+    span{
+        color: #494E6E !important;
+        font-weight: bold;
+    }
+    img {
+      max-width: 650px !important;
+      height: auto;
+      margin: auto !important;
+    }
+    .small-img{
+      min-width: 900px !important;
+      object-fit: cover;
+    }
+  `}
+</style>
+
+# < Table /> ⚙️
+
+<br /> 
+
+
+Este componente nos sirve para mostrar un arreglo en forma de lista, y ofrece la opción de recibir una función a ejecutar cuando se haga click en la selección de algún producto, pasando ese mismo producto como parámetro.
+
+```
+<Table listItem={} listHeaderItem={} onClick={} />
+```
+
+<p>
+<span>NOTA:</span> en la story aparece una notificación con el objeto seleccionado. Esta función está pasada a la story para demostrar el uso de la propiedad onClick y no está incluida en la librería
+</p>

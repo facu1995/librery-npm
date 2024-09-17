@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.ticketPage{
+    background-color: #F7F7FA;
+    min-height: 100%;
+    min-width: 100%;
+}
+
+.closeTicketModal>div{
+    max-width: 30%;
+}
+.closeTicketModal>div h3{
+    font-weight: 500;
+    width: 70%;
+    margin-inline: auto;
+    text-align: center;
+    padding-top: 2rem;
+}
+.closeTicketModal form{
+    margin: 1rem auto;
+    max-width: 80%;
+}
+.closeTicketModal form textarea{
+    min-height: 7rem;
+}

@@ -1,0 +1,91 @@
+import { Meta } from '@storybook/addon-docs';
+import {Counter} from '../../../components'
+
+<Meta title="Infosis/BuildingBlocks/Counter/Overview" />
+
+
+<style>
+  {`
+    h1 {
+      color: #383C54 !important;
+      max-width: 32ch !important;
+    }
+    h2, h3, h4 {
+      max-width: 59ch !important;
+      color: #383C54 !important;
+    }
+    ul{
+      max-width: 70ch!important
+    }
+    li {
+      font-size: 1rem !important;
+      margin: .5rem 0 !important;
+      color: #494E6E !important;
+    } 
+    li>span{
+      font-weight: bolder;
+    }
+    p {
+      margin: .5rem 0 !important;
+      font-size: 1rem !important;
+      color: #494E6E !important;
+    } 
+    .language-plaintext>span{
+      font-weight: lighter !important;
+      color: #494E6E !important;
+    }
+    .language-plaintext{
+        color: #494E6E !important;
+    }
+    p>span{
+        font-weight: bold;
+    }
+    img {
+      max-width: 650px !important;
+      height: auto;
+      margin: auto !important;
+    }
+    .small-img{
+      min-width: 900px !important;
+      object-fit: cover;
+    }
+  `}
+</style>
+
+# < Counter /> ⚙️
+
+Counter es un componente pensado para proyectos donde debemos reflejar una cantidad variable de manera sencilla y en tiempo real. Genera un contenedor que muestra de un lado la cantidad, y del otro lado una descripción de la entidad que se está contando. 
+
+```
+<Counter amount={16} label='Componentes' />
+
+```
+*<Counter amount={16} label='Componentes' />*
+
+<br />
+
+## Enumerar un arreglo en lugar de mostrar un valor
+
+
+Además de pasar explícitamente el valor a mostrar, podemos pasar un arreglo y el contador va a devolver el largo del mismo. 
+
+
+```
+const array = [1, 2, 3, 4, 5]
+<Counter label='Items' items={array} />
+
+```
+*<Counter label='Items' items={[1, 2, 3, 4, 5]} />*
+
+<br />
+
+## Usar contador como botón
+
+El contador puede tomar una propiedad onClick, que recibe una función a ejecutar cuando se clickeé el contador. Además cambia su UI.
+
+```
+<Counter label='Clickable' amount={5} onClick=(()=>{}) />
+
+```
+
+*<Counter label='Clickable' amount={5} onClick={()=>{}} />*

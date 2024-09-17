@@ -1,0 +1,44 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5rem;
+    z-index: 100;
+}
+
+.boxFile {
+    background: #FFFFFF;
+    border: 0.5px solid #47D1A0;
+    border-radius: 4px;
+    display: flex;
+    height: 31px;
+    width: 25rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3px 0px;
+    padding: 0px 15px;
+    transition: margin-left 1s;
+}
+
+.labelFile {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19px;
+    color: #004C97;
+}
+
+.deleteImg {
+    cursor: pointer;
+}
+
+.label {
+    padding:0 0 5px 3px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: #585D6F;
+}

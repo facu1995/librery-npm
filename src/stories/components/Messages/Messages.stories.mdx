@@ -1,0 +1,64 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Infosis/BuildingBlocks/Messages/Overview" />
+
+<style>
+  {`
+    h1 {
+      color: #383C54 !important;
+      max-width: 32ch !important;
+    }
+    h2, h3, h4 {
+      max-width: 59ch !important;
+      color: #383C54 !important;
+    }
+    ul{
+      max-width: 70ch!important
+    }
+    p {
+      margin: .5rem 0 !important;
+      font-size: 1rem !important;
+      color: #494E6E !important;
+    } 
+    div:not(.language-plaintext)>span{
+      font-weight: bolder;
+      color: #494E6E !important;
+    }
+    .language-plaintext>span{
+      font-weight: lighter !important;
+      color: #494E6E !important;
+    }
+    .language-plaintext{
+        color: #494E6E !important;
+    }
+    p>span{
+        font-weight: bold;
+    }
+    span{
+        color: #494E6E !important;
+        font-weight: bold;
+    }
+    img {
+      max-width: 650px !important;
+      height: auto;
+      margin: auto !important;
+    }
+    .small-img{
+      min-width: 900px !important;
+      object-fit: cover;
+    }
+  `}
+</style>
+
+# < Message /> ⚙️
+
+El componente Message muestra una imagen alusiva al tipo de mensaje que busca comunicar ('success', 'confirm' o 'error'). Opcionalmente recibe dos props más para mostrar texto describiendo el error o la acción a tomar. 
+Este componenente no tiene un tamaño propio, está hecho para adaptarse a un contenedor.
+
+<span>Este componenente no tiene un tamaño propio, está hecho para adaptarse a un contenedor.</span>
+
+```
+<contenedor>
+    <Message type='error' message1='Oops, hubo un error' />
+<contenedor>
+```

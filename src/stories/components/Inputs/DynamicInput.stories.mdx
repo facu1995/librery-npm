@@ -1,0 +1,79 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta title="Infosis/BuildingBlocks/Inputs/Overview" />
+
+<style>
+  {`
+    h1 {
+      color: #383C54 !important;
+      max-width: 32ch !important;
+    }
+    h2, h3, h4 {
+      max-width: 59ch !important;
+      color: #383C54 !important;
+    }
+    ul{
+      max-width: 70ch!important
+    }
+    p {
+      margin: .5rem 0 !important;
+      font-size: 1rem !important;
+      color: #494E6E !important;
+    } 
+    div:not(.language-plaintext)>span{
+      font-weight: bolder;
+      color: #494E6E !important;
+    }
+    .language-plaintext>span{
+      font-weight: lighter !important;
+      color: #494E6E !important;
+    }
+    .language-plaintext{
+        color: #494E6E !important;
+    }
+    p>span{
+        font-weight: bold;
+    }
+    span{
+        color: #494E6E !important;
+        font-weight: bold;
+    }
+    img {
+      max-width: 650px !important;
+      height: auto;
+      margin: auto !important;
+    }
+    .small-img{
+      min-width: 900px !important;
+      object-fit: cover;
+    }
+  `}
+</style>
+
+# < DynamicInput /> ⚙️
+
+Este componente contiene todos los inputs de la librería, y recibe una prop 'data' con la información conteniendo el tipo de input, tipo de dato, placeholder, texto de label, opciones, etc. Es usado por el componente DynamicForm para elegir el input adecuado para cada campo.
+    Alternativamente, todos los inputs que devuelve éste componente pueden ser exportados por sí mismos.
+
+<br />
+
+## El objeto 'data'
+
+En la propiedad data debemos pasar un objeto con una serie de propiedades que el componente usará para crear el HTML. El objeto debe verse así 
+
+```
+type InputType = 'textarea' | 'select' | 'file' | 'radio' | 'date' | 'checkbox' | 'password' | 'input'
+
+
+data = {
+  title: string;  //usado para la propiedad 'name' del input y htmlFor del label
+  label: string;  //usado para poblar el textContent del label, esta información es visible al usuario
+  placeholder: string; //placeholder del input
+  type: InputType; //tipo de input
+  options: Array<Option> | string; //array de opciones para componentes 'select' o 'radio' o URL para fetchear las mismas
+  default: string | boolean | Date | undefined | number; //valor default del input
+  dependentOn?: string; //opcional, indica la dependencia sobre otro campo
+}
+```
+
+
