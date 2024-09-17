@@ -25,6 +25,9 @@
     "build-storybook": "storybook build",
     "plop": "plop --plopfile plop/plopfile.js"
   },
+  "workspaces": [
+    "src/components/*"
+  ],
   "peerDependencies": {
     "react": ">=16"
   },
