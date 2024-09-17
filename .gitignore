@@ -1,1 +1,14 @@
-node_modules/
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/dist
+/storybook-static
+/example
+
+package-lock.json
+yarn.lock
+.idea
