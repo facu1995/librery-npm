@@ -1,5 +1,5 @@
 import { useState, useCallback, useEffect } from 'react';
-import { ToastProps } from '../components/Toast/Toast';
+import { ToastProps } from '../components/Toast/src/Toast';
 
 const useToast = () => {
   const [toast, setToast] = useState<ToastProps | null>(null);

@@ -1,11 +1,11 @@
 {
   "name": "@infosis/toast",
-  "version": "1.0.0",
-  "main": "Toast.tsx",
+  "version": "1.0.1",
+  "main": "src/Toast.tsx",
   "author": "fperez <fperez>",
   "license": "ISC",
   "files": [
-    "./"
+    "src"
   ],
   "peerDependencies": {
     "react": "^18.0.0",

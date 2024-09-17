@@ -25,6 +25,6 @@ export { default as Spinner } from './Spinner/Spinner';
 export { default as Tooltip } from './Tooltip/Tooltip';
 export { default as Collapse } from './Collapse/Collapse';
 export { default as Nav } from './Nav/Nav';
-export { default as Toast } from './Toast/Toast';
+export { default as Toast } from './Toast/src/Toast';
 export { default as TreeTraverser } from './TreeTraverser/TreeTraverser';
 // COMPONENT IMPORTS
