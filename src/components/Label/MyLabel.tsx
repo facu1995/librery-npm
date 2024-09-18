@@ -1,6 +1,6 @@
 import style from './mylabel.module.css';
 import React, { ReactNode } from 'react';
-import importantImg from '../../components/Label/assets/importantImg.svg';
+import importantImg from './assets/importantImg.svg';
 export interface Props {
   /**
    * Escribimos el texto a mostar
