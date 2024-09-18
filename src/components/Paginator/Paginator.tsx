@@ -1,23 +1,12 @@
 import style from './paginator.module.css';
-import { MyLabel } from '../Label/MyLabel';
+import { MyLabel } from '@infosis/label'; 
 import ableNext from './assets/ableNext.svg';
 import disableNext from './assets/disableNext.svg';
 import React, { useState } from 'react';
 
 export interface PaginatorProps {
-  /**
-   * defines the current position of the paginator, defaulted to 1
-   */
   currentPage?: number;
-  /**
-   * function to retrieve the current page number on every change, takes a parameter of number type as argument and returns nothing
-   */
-  //
   handleChange: (arg: number) => void;
-  /**
-    max amount of pages, used for disabling buttons when limit reached, defaulted to 10
-     * 
-     */
   maxPages?: number;
 }
 
