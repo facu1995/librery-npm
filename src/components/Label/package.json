@@ -1,11 +1,11 @@
 {
   "name": "@infosis/label",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "MyLabel.tsx",
   "author": "fperez <fperez>",
   "license": "ISC",
   "files": [
-    "./"
+    "./*"
   ],
   "peerDependencies": {
     "react": "^18.0.0",
