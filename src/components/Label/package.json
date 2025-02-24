@@ -1,6 +1,6 @@
 {
   "name": "@infosis/label5",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Descripción del paquete",
   "main": "MyLabel.tsx",
   "author": "fperez <fperez>",
@@ -13,7 +13,7 @@
     "Label.test.tsx",
     "MyLabel.tsx"
   ],
-  "readmeFilename": "README.md",
+  "readme": "# `@infosis/label` `@infosis/label` es un componente de React reutilizable para mostrar etiquetas con múltiples opciones de estilo. ## Instalación Para usar `MyLabel` en tu proyecto, primero instala el paquete desde tu registro npm privado: ```bash npm install @infosis/label ``` ## Uso ```jsx import React from 'react'; import { MyLabel } from '@infosis/label'; const App = () => ( <div> <MyLabel label=\"Important Label\" size=\"h2\" allCaps color=\"#ff5733\" backgroundColor=\"rgba(0, 0, 0, 0.1)\" weight=\"bold\" isImportant > <span>Additional content</span> </MyLabel> </div> ); export default App; ```",
   "scripts": {
     "test": "jest"
   },

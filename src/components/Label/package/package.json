@@ -1,0 +1,33 @@
+{
+  "name": "@infosis/label5",
+  "version": "1.0.9",
+  "description": "Descripción del paquete",
+  "main": "MyLabel.tsx",
+  "author": "fperez <fperez>",
+  "license": "ISC",
+  "files": [
+    "mylabel.module.css",
+    "LICENSE.md",
+    "README.md",
+    "assets/importantImg.svg",
+    "Label.test.tsx",
+    "MyLabel.tsx"
+  ],
+  "readmeFilename": "README.md",
+  "scripts": {
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "jest": "^27.0.0",
+    "typescript": "^4.0.0"
+  },
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  },
+  "gitHead": "1759e87b665edd4665dee4115e9478f1c8e939f8"
+}
+
