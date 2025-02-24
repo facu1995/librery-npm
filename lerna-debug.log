@@ -1,0 +1,13 @@
+70 error Error: Command failed with exit code 1: npm install --package-lock-only --ignore-scripts
+70 error npm ERR! code ETARGET
+70 error npm ERR! notarget No matching version found for package-2@^0.2.2.
+70 error npm ERR! notarget In most cases you or one of your dependencies are requesting
+70 error npm ERR! notarget a package version that doesn't exist.
+70 error
+70 error npm ERR! A complete log of this run can be found in:
+70 error npm ERR!     /home/fperez/.npm/_logs/2025-02-24T16_13_17_554Z-debug.log
+70 error     at makeError (/home/fperez/Escritorio/repository/liberia-npm/node_modules/lerna/node_modules/execa/lib/error.js:59:11)
+70 error     at handlePromise (/home/fperez/Escritorio/repository/liberia-npm/node_modules/lerna/node_modules/execa/index.js:114:26)
+70 error     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+70 error     at async VersionCommand.updatePackageVersions (/home/fperez/Escritorio/repository/liberia-npm/node_modules/lerna/dist/index.js:9901:13)
+70 error     at async Promise.all (index 0)

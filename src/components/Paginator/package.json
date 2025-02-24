@@ -1,6 +1,6 @@
 {
   "name": "@infosis/paginator",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "main": "./Paginator.tsx",
   "author": "fperez <fperez>",
   "license": "ISC",
@@ -8,7 +8,7 @@
     "./*"
   ],
   "dependencies": {
-    "@infosis/label": "^1.0.5"
+    "@infosis/label": "^1.0.6"
   },
   "peerDependencies": {
     "react": "^18.0.0",
