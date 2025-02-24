@@ -1,12 +1,21 @@
 {
   "name": "@infosis/label",
-  "version": "1.0.6",
+  "version": "1.0.7",
+  "description": "Descripción del paquete",
   "main": "MyLabel.tsx",
   "author": "fperez <fperez>",
   "license": "ISC",
   "files": [
-    "./*"
+    "mylabel.module.css",
+    "LICENSE.md",
+    "README.md",
+    "assets/importantImg.svg",
+    "Label.test.tsx",
+    "MyLabel.tsx"
   ],
+  "scripts": {
+    "test": "jest"
+  },
   "peerDependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
