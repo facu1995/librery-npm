@@ -1,6 +1,6 @@
 {
   "name": "@infosis/label",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Descripción del paquete",
   "main": "MyLabel.tsx",
   "author": "fperez <fperez>",
