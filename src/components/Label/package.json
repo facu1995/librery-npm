@@ -5,7 +5,6 @@
   "main": "MyLabel.tsx",
   "author": "fperez <fperez>",
   "license": "ISC",
-  "readme":"README.md",
   "files": [
     "mylabel.module.css",
     "LICENSE.md",
@@ -14,6 +13,7 @@
     "Label.test.tsx",
     "MyLabel.tsx"
   ],
+  "readmeFilename": "README.md",
   "scripts": {
     "test": "jest"
   },
