@@ -1,6 +1,0 @@
-50 error Error: Command failed with exit code 128: git push --follow-tags --no-verify --atomic origin main
-50 error remote: Support for password authentication was removed on August 13, 2021.
-50 error remote: Please see https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls for information on currently recommended modes of authentication.
-50 error fatal: Autenticación falló para 'https://github.com/facu1995/librery-npm.git/'
-50 error     at makeError (/home/fperez/Escritorio/repository/liberia-npm/node_modules/execa/lib/error.js:59:11)
-50 error     at handlePromise (/home/fperez/Escritorio/repository/liberia-npm/node_modules/execa/index.js:114:26)
